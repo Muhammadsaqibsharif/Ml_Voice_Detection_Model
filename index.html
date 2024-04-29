@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .navbar {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        input[type="range"] {
+            width: 200px;
+            margin: 10px;
+        }
+
+        #console {
+            margin-top: 20px;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/speech-commands"></script>
+</head>
+
+<body>
+    <div class="navbar">
+        <h1>Audio Detection</h1>
+    </div>
+    <button id="left" onmousedown="collect(0)" onmouseup="collect(null)">Left</button>
+    <button id="right" onmousedown="collect(1)" onmouseup="collect(null)">Right</button>
+    <button id="noise" onmousedown="collect(2)" onmouseup="collect(null)">Noise</button>
+    <br /><br />
+    <button id="train" onclick="train()">Train</button>
+    <br /><br />
+    <button id="listen" onclick="listen()">Listen</button>
+    <input type="range" id="output" min="0" max="10" step="0.1">
+    <div id="console"></div>
+    <script src="index.js"></script>
+</body>
+
+</html> 
